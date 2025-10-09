@@ -16,16 +16,18 @@ Output 2:
 #include <stdio.h>
 
 int main() {
-    int number;
-    printf("Enter a non-negative integer: ");
-    scanf("%d", &number);
-    if (number < 0) {
-        printf("Please enter a non-negative integer.\n");
-        return 1;
-    }
-    if (number == 0) {
-        printf("0\n");
+    int n, bin[32], i = 0;
+    scanf("%d", &n);
+    if(n == 0) {
+        printf("0");
         return 0;
+    }
+    while(n > 0) {
+        bin[i++] = n % 2;
+        n /= 2;
+    }
+    for(int j = i - 1; j >= 0; j--) {
+        printf("%d", bin[j]);
     }
     return 0;
 }
