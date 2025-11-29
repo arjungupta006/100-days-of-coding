@@ -11,8 +11,15 @@ Go
 #include <stdio.h>
 
 int main() {
-    enum TrafficLight { RED, YELLOW, GREEN };   
-    enum TrafficLight light = GREEN;    
+    enum TrafficLight { RED, YELLOW, GREEN };
+    enum TrafficLight light;
+
+    int choice;
+    printf("Enter light (0=RED, 1=YELLOW, 2=GREEN): ");
+    scanf("%d", &choice);
+
+    light = choice;
+
     switch (light) {
         case RED:
             printf("Stop\n");
@@ -26,6 +33,6 @@ int main() {
         default:
             printf("Invalid traffic light\n");
     }
-                                                    
+
     return 0;
 }
